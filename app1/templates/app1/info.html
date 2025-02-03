@@ -1,0 +1,84 @@
+{% if pages %}
+
+{% for visitor in pages %}
+{% load static %}
+
+
+
+<div class="info-container">
+
+    <div class="visitor-details-box">
+        <div class="visit-details">
+            <div class="visit-edit-wrap">
+                <h3>VISITOR DETAILS:</h3>
+                <div class="edit-del">
+                    <a href="{% url 'edit' visitor.id %}">
+                        <img class="vector-icon11" alt="" src="{% static 'images/edit1.svg' %}" />
+                    </a>
+
+                    
+                    <a href="{% url 'delete' visitor.id %}">
+                        <img class="vector-icon12" alt="" src="{% static 'images/del.svg' %}" />
+                    </a>
+
+
+
+
+                </div>
+            </div>
+            <div class="visit-wrap">
+                <div class="info-name">
+                    <span>Name:</span><span class="vn">{{ visitor.name }}</span>
+                </div>
+                <div class="info-org">
+                    <span>Organization:</span><span class="vo">{{ visitor.organization }}</span>
+                </div>
+                <div class="info-loc">
+                    <span>Location:</span><span class="vl">{{ visitor.location }}</span>
+                </div>
+                <div class="info-dom">
+                    <span>Domain:</span><span class="vd">{{ visitor.domain }}</span>
+                </div>
+                <div class="info-ph">
+                    <span>Phone:</span><span class="vp">{{ visitor.phone }}</span>
+                </div>
+            </div>
+             
+        </div>
+        
+    </div>
+    
+    <div class="date-coord-wrap">
+        <div class="date-event-box"> 
+            <div class="date-event">
+                <h3>Date and Event:</h3>
+                <div class="info_data">Event:<span id="info_event">{{ visitor.event }}</span></div>
+                <div class="info_data">Date:<span id="info_date">{{ visitor.date }}</span></div>
+            </div>      
+        </div>
+    
+        <div class="coordinator-box">
+            <div class="coordinator">
+                <h3>Coordinator Details:</h3>
+                <div class="info_data">Name:<span id="info_name">{{visitor.host.name}}</span></div>
+                <div class="info_data">Phone:<span id="info_phone">{{visitor.host.phone}}</span></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endfor %}
+
+
+{% else %}
+    <div class="not_found">
+        <img class="vector-icon13" alt="No Results Found" src="{% static 'images/no_result.svg' %}" />
+
+        <div class="no_result_test">
+            <h3>No Results Found</h3>
+            <h4>We Can't Find Any Matching Items For Your Search</h4>
+        </div>
+    </div>
+{% endif %}
+

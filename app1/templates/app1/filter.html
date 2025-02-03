@@ -1,0 +1,39 @@
+<div class="filter-box">
+
+    <div class="filter-top">
+        <p>Refine your Search...</p>
+    </div>
+
+    <div class="filter-form">
+        <form method="POST" action="{% url 'home' %}">
+            {% csrf_token %}
+            <div class="form-content">
+                <div class="name-filter">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name"><br>
+    
+                </div>
+                <div class="org-filter">
+                    <label for="organization">Oragnizaton</label><br>
+                    <input type="text" id="organization" name="organization"><br>
+    
+                </div>
+                <div class="loc-filter">
+                    <label for="location">Location</label><br>
+                    <input type="text" id="location" name="location"><br>
+    
+                </div>
+                <div class="dom-filter">
+                    <label for="domain">Domain</label><br>
+                    <input type="text" id="domain" name="domain"><br>
+                </div>
+        
+                    <button type="submit" value="SEARCH">Apply Filters</button>
+            </div>
+    
+          </form>
+    </div>
+
+</div>
+
+

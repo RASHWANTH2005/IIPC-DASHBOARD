@@ -1,0 +1,93 @@
+<div>
+
+    <div class="F-container">
+    
+        <h2>FINANCIAL YEAR</h2>
+
+
+        <div class="all-6">
+            <a href="{% url 'home'  %}">  ALL    <span class="all-sp">{{count}}</span> </a> 
+        </div>
+        <div class="year1">
+            <a href="{% url 'year' 2021 2022 %}">  2021-2022  <span class="y1-sp">{{year1.count}}</span></a>
+        </div>
+        <div class="year2">
+            <a href="{% url 'year' 2022 2023 %}">  2022-2023  <span class="y2-sp">{{year2.count}}</span>  </a>
+        </div>
+        <div class="year3">
+            <a href="{% url 'year' 2023 2024 %}">  2023-2024  <span class="y3-sp">{{year3.count}}</span>  </a>
+        </div>
+        <div class="year4">
+            <a href="{% url 'year' 2024 2025 %}">  2024-2025  <span class="y4-sp">{{year4.count}}</span>  </a>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+
+<!-- ################################################################################################ -->
+
+
+<!-- <div class="financial-year-parent">
+    <div class="financial-year">
+        <h1>FINANCIAL YEAR</h1>
+    </div>
+
+    <div class="all-parent">
+        <div class="all">
+            <a href="{% url 'home' %}">All <span>{{ count }}</span></a>
+        </div>
+        <div class="rectangle-parent">
+            <div class="frame-child"></div>
+            <div class="div">{{ count }}</div>
+        </div>
+    </div>
+
+    <div class="parent">
+        <div class="div1">
+            <a href="{% url 'year' 2021 2022 %}">2021-2022 <span>{{ year1.count }}</span></a>
+        </div>
+        <div class="rectangle-group">
+            <div class="frame-item"></div>
+            <div class="div2">{{ year1.count }}</div>
+        </div>
+    </div>
+
+    <div class="frame-div">
+        <div class="frame-parent1">
+            <div class="frame-wrapper1">
+                <div class="group">
+                    <div class="div3">
+                        <a href="{% url 'year' 2022 2023 %}">2022-2023 <span>{{ year2.count }}</span></a>
+                    </div>
+                    <div class="rectangle-container">
+                        <div class="frame-inner"></div>
+                        <div class="div4">{{ year2.count }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="div5">
+                    <a href="{% url 'year' 2023 2024 %}">2023-2024 <span>{{ year3.count }}</span></a>
+                </div>
+                <div class="group-div">
+                    <div class="rectangle-div"></div>
+                    <div class="div6">{{ year3.count }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="parent1">
+            <div class="div7">
+                <a href="{% url 'year' 2024 2025 %}">2024-2025 <span>{{ year4.count }}</span></a>
+            </div>
+            <div class="rectangle-parent1">
+                <div class="frame-child1"></div>
+                <div class="div8">{{ year4.count }}</div>
+            </div>
+        </div>
+    </div>
+</div> -->

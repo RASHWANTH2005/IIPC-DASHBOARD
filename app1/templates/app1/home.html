@@ -1,0 +1,82 @@
+{%  extends 'main.html' %}
+
+{% load static %}
+
+
+{% block content %}
+{% include 'nav.html' %}
+
+
+
+<div class="home-container">
+
+
+    <div class="financial-year">
+        {% include 'app1/year.html' %}
+
+    </div>
+    
+
+    <div class="info-wrap">
+        <div class="visitor-wrap">
+            <div class="visitor-text">
+                <h2>VISITOR INFO</h2>
+                <h5>237 visitors this year</h5>
+            </div> 
+            
+            <div class="export">
+                <a href="{% url 'export_to_excel' %}?page = {{pages}}">
+                <img class="vector-icon14" alt="No Results Found" src="{% static 'images/export-1.svg' %}" />
+                </a>
+            </div>
+    
+            <div class="create-button">
+                <img class="vector-icon" alt="" src="{% static 'images/plus.svg' %}" />
+                <a href="{% url 'create' %}">Create Record</a>
+            </div>
+        </div>
+
+        <div class="info-content">
+            {% include 'app1/info.html' %}
+        </div>
+
+
+
+        <div class="pages-wrap">
+            <div class="pages-box">
+                <div class="prev-box">
+                    {% if pages.has_previous %} <a href="?page={{pages.previous_page_number}}">prev</a>
+                    {% else %} <a href="?page={{pages.number}}">prev</a>
+                    {% endif %} 
+                </div>
+                <div class="page-box">
+                    <p>Page {{ pages.number }} of {{ pages.paginator.num_pages }}</p>
+                </div>
+                <div class="next-box">
+                    {% if pages.has_next %}  <a href="?page={{pages.next_page_number}}">next</a>
+                    {% else %} <a href="?page={{pages.number}}">next</a>
+                    {% endif %}
+                </div>
+        
+        
+            </div>
+        </div>
+
+
+
+    </div>
+
+    
+    
+    <div class="filter-wrap">
+        {% include 'app1/filter.html' %}
+    
+    </div>
+
+
+</div>
+
+
+
+
+{% endblock %}
